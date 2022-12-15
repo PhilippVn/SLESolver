@@ -26,5 +26,16 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'slesolver.App'
+    mainClass = 'slesolver.SLESolver'
+}
+
+group 'neffe.von.philipp'
+version '1.0'
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version,
+                'Main-Class' : application.mainClass)
+    }
 }
